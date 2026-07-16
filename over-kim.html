@@ -12,10 +12,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=26">
 </head>
-<body>
+<body class="has-hero">
 
 <!-- NAV -->
-<nav class="nav solid" data-nav>
+<nav class="nav" data-nav>
   <a href="index.html" class="brand" aria-label="AdemRuimte home">
     <img class="mark mark-light" src="assets/img/icoon_light_w400.png" alt="">
     <img class="mark mark-dark" src="assets/img/icoon_w400.png" alt="">
@@ -46,9 +46,15 @@
 </div>
 
 <!-- HERO -->
-<header class="page-hero" style="padding-top:clamp(100px,12vw,132px); padding-bottom:clamp(28px,4vw,48px);">
+<header class="hero side right">
+  <div class="hero-photo">
+    <img src="assets/img/kim-portret.jpg" alt="Kim Peters" fetchpriority="high">
+  </div>
+  <div class="hero-scrim"></div>
   <div class="wrap">
-    <h1 class="reveal" data-delay="1">Welkom bij AdemRuimte,<br><em>praktijk voor ademtherapie</em></h1>
+    <div class="hero-side-text">
+      <h1 class="reveal" data-delay="1">Welkom bij AdemRuimte,<br><em>praktijk voor ademtherapie</em></h1>
+    </div>
   </div>
 </header>
 
