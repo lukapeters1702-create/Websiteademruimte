@@ -107,15 +107,30 @@
       }
     }));
 
-  /* ---- Scroll-reveal ---- */
+  /* ---- Scroll-reveal ----
+     Wat al in beeld staat bij het laden verschijnt meteen scherp (zonder fade),
+     zodat paginawissels niet "haperen". Alleen wat je daarna in beeld scrolt animeert. */
   const items = document.querySelectorAll('.reveal, .reveal-img');
-  if ('IntersectionObserver' in window && items.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-    items.forEach(el => io.observe(el));
-  } else {
-    items.forEach(el => el.classList.add('in'));
+  if (items.length) {
+    document.body.classList.add('reveal-instant');
+    const vh = window.innerHeight;
+    const deferred = [];
+    items.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('in');
+      else deferred.push(el);
+    });
+    const enableAnim = () => document.body.classList.remove('reveal-instant');
+    requestAnimationFrame(() => requestAnimationFrame(enableAnim));
+    setTimeout(enableAnim, 250);
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+      deferred.forEach(el => io.observe(el));
+    } else {
+      deferred.forEach(el => el.classList.add('in'));
+    }
   }
 
   /* ---- Jaartal ---- */
