@@ -260,7 +260,7 @@ p:last-child{ margin-bottom:0; }
 .statement{ position:relative; text-align:center; }
 .statement .q{
   font-family:var(--serif); font-style:italic; font-weight:400;
-  font-size:clamp(28px,4.4vw,52px); line-height:1.32; color:var(--cream-light);
+  font-size:clamp(24px,3.9vw,46px); line-height:1.32; color:var(--cream-light);
   max-width:18ch; margin:0 auto;
 }
 .statement .q b{ color:var(--copper-soft); font-weight:500; font-style:normal; }
@@ -375,7 +375,7 @@ p:last-child{ margin-bottom:0; }
   padding:16px 20px; border-radius:8px; font-family:var(--serif); font-style:italic;
   font-size:16px; line-height:1.4; }
 .pull{ margin:26px 0 0; padding-left:26px; border-left:2px solid var(--copper);
-  font-family:var(--serif); font-style:italic; font-size:clamp(19px,1.9vw,24px);
+  font-family:var(--serif); font-style:italic; font-size:clamp(17px,1.7vw,22px);
   line-height:1.4; color:var(--copper); }
 @media(min-width:861px){ .kim-photo .photo{ aspect-ratio:auto; } }
 @media(max-width:860px){
