@@ -363,6 +363,7 @@ p:last-child{ margin-bottom:0; }
 /* Hero-band met tekst rechts (bv. Over Kim) */
 .hero.side.right .hero-side-text{ margin-left:auto; margin-right:0; }
 .hero.side.right .hero-scrim{ background:linear-gradient(90deg, rgba(15,35,34,.18) 0%, rgba(15,35,34,.4) 52%, rgba(15,35,34,.62) 100%); }
+.hero.side.right .hero-photo img{ object-position:center 72%; }
 
 /* Over Kim — redactioneel verhaal (tekst links, foto + quote rechts) */
 .kim-story{ display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(36px,5vw,64px); align-items:stretch; }
