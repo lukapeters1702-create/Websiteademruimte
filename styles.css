@@ -361,7 +361,7 @@ p:last-child{ margin-bottom:0; }
 @media(max-width:860px){ .hero-side-text{ max-width:100%; } }
 
 /* Hero-band met tekst rechts (bv. Over Kim) */
-.hero.side.right .hero-side-text{ margin-left:auto; margin-right:0; }
+.hero.side.right .hero-side-text{ margin-left:auto; margin-right:0; max-width:42%; }
 .hero.side.right .hero-scrim{ background:linear-gradient(90deg, rgba(15,35,34,.18) 0%, rgba(15,35,34,.4) 52%, rgba(15,35,34,.62) 100%); }
 .hero.side.right .hero-photo img{ object-position:center 72%; }
 
