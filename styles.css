@@ -122,10 +122,6 @@ p:last-child{ margin-bottom:0; }
 .tech-duo .tech-txt p{ color:var(--text-soft); }
 @media(max-width:860px){ .tech-duo{ grid-template-columns:1fr; gap:48px; } }
 
-/* Verwijzers: twee lijsten naast elkaar binnen één kaart */
-.ref-duo{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,64px); }
-@media(max-width:760px){ .ref-duo{ grid-template-columns:1fr; gap:40px; } }
-
 /* ---------- Knoppen ---------- */
 .btn{
   display:inline-flex; align-items:center; gap:12px;
