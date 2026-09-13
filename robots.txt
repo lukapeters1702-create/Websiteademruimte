@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lukapeters1702-create.github.io/Websiteademruimte/sitemap.xml
