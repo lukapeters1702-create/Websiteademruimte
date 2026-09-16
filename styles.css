@@ -38,7 +38,7 @@
 
 /* ---------- Reset ---------- */
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
 body{
   font-family:var(--sans);
   color:var(--text);
@@ -243,7 +243,7 @@ p:last-child{ margin-bottom:0; }
 .hero .wrap{ position:relative; z-index:2; padding-bottom:clamp(54px,9vw,110px); padding-top:90px; }
 .hero-logo{ width:min(320px,62%); height:auto; margin-bottom:clamp(22px,3vw,32px);
   filter:drop-shadow(0 3px 22px rgba(15,35,34,.32)); }
-.hero h1{ color:var(--cream-light); max-width:22ch; text-shadow:0 2px 30px rgba(15,35,34,.3); font-size:clamp(40px,5.6vw,76px); }
+.hero h1{ color:var(--cream-light); max-width:22ch; text-shadow:0 2px 30px rgba(15,35,34,.3); font-size:clamp(40px,5.6vw,76px); overflow-wrap:break-word; }
 .hero h1 em{ color:var(--ink-light); }
 .hero-eyebrow{ color:var(--ink-light); margin-bottom:22px; }
 .hero-eyebrow::before{ background:var(--copper-soft); }
@@ -363,15 +363,20 @@ p:last-child{ margin-bottom:0; }
 .hero.side{ min-height:clamp(520px,74vh,760px); align-items:center; }
 .hero.side .wrap{ padding-top:96px; padding-bottom:72px; }
 .hero.side .hero-scrim{ background:linear-gradient(90deg, rgba(15,35,34,.6) 0%, rgba(15,35,34,.4) 45%, rgba(15,35,34,.18) 100%); }
-.hero-side-text{ margin-right:auto; max-width:48%; }
+.hero-side-text{ margin-right:auto; max-width:48%; box-sizing:border-box; }
 .hero.side h1{ max-width:none; }
-@media(max-width:860px){ .hero-side-text{ max-width:100%; } }
 
 /* Hero-band met tekst rechts (bv. Over Kim) */
 .hero.side.right .hero-side-text{ margin-left:auto; margin-right:0; max-width:42%; }
 .hero.side.right .hero-scrim{ background:linear-gradient(90deg, rgba(15,35,34,.18) 0%, rgba(15,35,34,.4) 52%, rgba(15,35,34,.62) 100%); }
 .hero.side.right .hero-photo img{ object-position:center 72%; }
 .hero.side:not(.right) .hero-photo img{ object-position:center 28%; }
+
+/* Mobiel: zijtekst nooit smaller maken dan de viewport (voorkomt afgeknipte kop) */
+@media(max-width:860px){
+  .hero-side-text, .hero.side.right .hero-side-text{ max-width:100%; width:100%; margin-left:0; margin-right:0; box-sizing:border-box; }
+  .hero.side h1{ font-size:clamp(28px,8vw,48px); overflow-wrap:break-word; }
+}
 
 /* Over Kim — redactioneel verhaal (tekst links, foto + quote rechts) */
 .kim-story{ display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(36px,5vw,64px); align-items:stretch; }
